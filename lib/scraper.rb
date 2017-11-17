@@ -11,11 +11,11 @@ class Scraper
 
     binding.pry
 
-    learn_students.css(div.student-card).each do |student|
+    learn_students.css("div.student-card").each do |student|
       students = {
-        # name:,
-        # location:,
-        # profile_url:
+        name: student.css("h4.student-name").text,
+        location: student.css("p.student-location").text,
+        profile_url: student.css("a").attribute("href").value
       }
     end
     students
@@ -27,4 +27,3 @@ class Scraper
 
 end
 
-Scraper.scrape_index_page('fixtures/student-site/index.html')
