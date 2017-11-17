@@ -13,8 +13,8 @@ class Scraper
 
     learn_students.css(div.student-card).each do |student|
       students = {
-        # name:
-        # location:
+        # name:,
+        # location:,
         # profile_url:
       }
     end
@@ -26,3 +26,5 @@ class Scraper
   end
 
 end
+
+Scraper.new.scrape_index_page(./fixtures/student-site/students/index.html)
