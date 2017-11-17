@@ -5,7 +5,7 @@ require 'pry'
 class Scraper
 
   def self.scrape_index_page(index_url)
-    learn_students = Nokogiri::HTML(open(index_url))
+    learn_students = Nokogiri::HTML(File.read(index_url))
 
     students = {}
 
@@ -27,4 +27,5 @@ class Scraper
 
 end
 
-Scraper.scrape_index_page("./fixtures/student-site/students/index.html")
+Scraper.new
+Scraper.scrape_index_page('fixtures/student-site/students/index.html')
