@@ -26,6 +26,8 @@ class Scraper
       case social
       when /twitter.com/
         profile[:twitter] = social['href']
+      end
+    end
         
     profile = {
       twitter: profile_page.css("div.social-icon-container a")[0]['href'],
