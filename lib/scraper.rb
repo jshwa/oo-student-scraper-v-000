@@ -20,10 +20,22 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
+    profile_page = Nokogiri::HTML(File.read(profile_url))
 
+    binding.pry
+    
+    profile = {
+      twitter: profile_page.css("div.social-icon-container")[0]['href']
+      linkedin: profile_page.css("")
+      github: profile_page.css("")
+      blog: profile_page.css("")
+      profile_quote: profile_page.css("")
+      bio: profile_page.css("")
+    }
+    profile
   end
 
 end
 
 Scraper.new
-Scraper.scrape_index_page('fixtures/student-site/index.html')
+Scraper.scrape_profile_page("fixtures/student-site/students/ryan-johnson.html")
