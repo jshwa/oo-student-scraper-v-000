@@ -27,5 +27,4 @@ class Scraper
 
 end
 
-Scraper.new
 Scraper.scrape_index_page('fixtures/student-site/index.html')
