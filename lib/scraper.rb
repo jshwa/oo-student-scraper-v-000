@@ -36,10 +36,13 @@ class Scraper
         profile[:blog] = social['href']
       end
     end
-    binding.pry
 
     profile[:profile_quote] = profile_page.css("div.vitals-text-container div.profile-quote").text
+    binding.pry
     profile[:bio] = profile_page.css("div.bio-content content-holder div.description-holder").text
     profile
   end
 end
+
+Scraper.new
+Scraper.scrape_profile_page("fixtures/student-site/students/ryan-johnson.html")
