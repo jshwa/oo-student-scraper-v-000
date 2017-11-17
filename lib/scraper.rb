@@ -27,4 +27,4 @@ class Scraper
 
 end
 
-Scraper.new.scrape_index_page('fixtures/student-site/students/index.html')
+Scraper.scrape_index_page('fixtures/student-site/students/index.html')
