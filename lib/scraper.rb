@@ -26,7 +26,7 @@ class Scraper
 
     profile_page.css("div.social-icon-container a").each do |social|
       binding.pry
-      case social
+      case social['href']
       when /twitter.com/
         profile[:twitter] = social['href']
       when /linkedin.com/
