@@ -9,8 +9,6 @@ class Scraper
 
     students = {}
 
-    binding.pry
-
     learn_students.css("div.student-card").each do |student|
       students = {
         name: student.css("h4.student-name").text,
@@ -26,4 +24,3 @@ class Scraper
   end
 
 end
-
