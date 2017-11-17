@@ -21,6 +21,12 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     profile_page = Nokogiri::HTML(File.read(profile_url))
+
+    profile_page.css("div.social-icon-container a").each |social|
+      case social
+      when /twitter.com/
+        profile[:twitter] = social['href']
+        
     profile = {
       twitter: profile_page.css("div.social-icon-container a")[0]['href'],
       linkedin: profile_page.css("div.social-icon-container a")[1]['href'],
