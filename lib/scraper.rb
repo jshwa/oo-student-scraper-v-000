@@ -26,7 +26,7 @@ class Scraper
       case social
       when /twitter.com/
         profile[:twitter] = social['href']
-      
+      end
     end
 
     profile = {
