@@ -22,6 +22,8 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_page = Nokogiri::HTML(File.read(profile_url))
 
+    profile = {}
+
     profile_page.css("div.social-icon-container a").each do |social|
       case social
       when /twitter.com/
