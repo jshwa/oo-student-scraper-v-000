@@ -26,9 +26,9 @@ class Scraper
       case social
       when /twitter.com/
         profile[:twitter] = social['href']
-      end
+      
     end
-        
+
     profile = {
       twitter: profile_page.css("div.social-icon-container a")[0]['href'],
       linkedin: profile_page.css("div.social-icon-container a")[1]['href'],
@@ -40,7 +40,6 @@ class Scraper
     binding.pry
     profile
   end
-
 end
 
 Scraper.new
