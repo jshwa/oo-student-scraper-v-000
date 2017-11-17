@@ -13,17 +13,16 @@ class Scraper
 
     learn_students.css(div.student-card).each do |student|
       students = {
-        name: 
-        location: 
-        profile_url:
+        # name:
+        # location:
+        # profile_url:
       }
     end
     students
   end
 
   def self.scrape_profile_page(profile_url)
-    
+
   end
 
 end
-
