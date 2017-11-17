@@ -26,14 +26,16 @@ class Scraper
       case social
       when /twitter.com/
         profile[:twitter] = social['href']
+      when /linkedin.com/
+        profile[:linkedin] = social['href']
+      when /github.com/
+        profile[:github] = social['href']
+      else
+        profile[:blog] = social['href']
       end
     end
 
     profile = {
-      twitter: profile_page.css("div.social-icon-container a")[0]['href'],
-      linkedin: profile_page.css("div.social-icon-container a")[1]['href'],
-      github: profile_page.css("div.social-icon-container a")[2]['href'],
-      blog: profile_page.css("div.social-icon-container a")[3]['href'],
       profile_quote: profile_page.css("div.vitals-text-container div.profile-quote").text,
       bio: profile_page.css("div.bio-content content-holder div.description-holder").text
     }
